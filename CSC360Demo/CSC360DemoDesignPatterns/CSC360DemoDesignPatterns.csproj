@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Facade\" />
+    <Folder Include="Decorator\" />
+    <Folder Include="Command\" />
+    <Folder Include="Factory\" />
+    <Folder Include="Bridge\" />
+    <Folder Include="Iterator\" />
+    <Folder Include="Composite\" />
+    <Folder Include="Adapter\" />
+    <Folder Include="Flyweight\" />
+    <Folder Include="Mediator\" />
+    <Folder Include="Memento\" />
+    <Folder Include="AbstractFactory\" />
+    <Folder Include="Builder\" />
+    <Folder Include="ChainOfResponsibility\" />
+    <Folder Include="TemplateMethod\" />
+    <Folder Include="Strategy\" />
+    <Folder Include="Observer\" />
+    <Folder Include="Proxy\" />
+    <Folder Include="ObjectPool\" />
+    <Folder Include="Visitor\" />
+    <Folder Include="Prototype\" />
+    <Folder Include="State\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Unity" Version="5.11.10" />
+  </ItemGroup>
+
+</Project>
