@@ -10,7 +10,6 @@
     <Folder Include="Facade\" />
     <Folder Include="Decorator\" />
     <Folder Include="Command\" />
-    <Folder Include="Factory\" />
     <Folder Include="Bridge\" />
     <Folder Include="Iterator\" />
     <Folder Include="Composite\" />
@@ -18,7 +17,6 @@
     <Folder Include="Flyweight\" />
     <Folder Include="Mediator\" />
     <Folder Include="Memento\" />
-    <Folder Include="AbstractFactory\" />
     <Folder Include="Builder\" />
     <Folder Include="ChainOfResponsibility\" />
     <Folder Include="TemplateMethod\" />
