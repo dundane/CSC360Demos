@@ -26,7 +26,6 @@
     <Folder Include="ObjectPool\" />
     <Folder Include="Visitor\" />
     <Folder Include="Prototype\" />
-    <Folder Include="State\" />
   </ItemGroup>
 
   <ItemGroup>
