@@ -12,7 +12,6 @@
     <Folder Include="Command\" />
     <Folder Include="Iterator\" />
     <Folder Include="Composite\" />
-    <Folder Include="Adapter\" />
     <Folder Include="Flyweight\" />
     <Folder Include="Mediator\" />
     <Folder Include="Memento\" />
