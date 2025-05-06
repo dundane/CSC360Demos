@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using CSC360DemoDesignPatterns.Bridge;
 using CSC360DemoDesignPatterns.State;
 using System.Diagnostics;
 using System.Management;
@@ -8,37 +9,48 @@ using System.Management;
 
 internal class Program {
   private static void Main(string[] args) {
-    Context stateContext = new Context(new Cassette());
 
-    Console.WriteLine(stateContext.PlayMusic());
+    //Bridge
+    IColor color = new RedColor();
+    IShape shape = new Square(color);
 
-    Thread.Sleep(20000);
-    KillSpotify();
-    Thread.Sleep(2000);
+    shape.Draw();
 
-    stateContext.SetContext(new AMRadio());
 
-    Console.WriteLine(stateContext.PlayMusic());
 
-    Thread.Sleep(20000);
-    KillSpotify();
-    Thread.Sleep(2000);
 
-    stateContext.SetContext(new FMRadio());
 
-    Console.WriteLine(stateContext.PlayMusic());
+    //Context stateContext = new Context(new Cassette());
 
-    Thread.Sleep(20000);
-    KillSpotify();
-    Thread.Sleep(2000);
+    //Console.WriteLine(stateContext.PlayMusic());
 
-    stateContext.SetContext(new CD());
+    //Thread.Sleep(20000);
+    //KillSpotify();
+    //Thread.Sleep(2000);
 
-    Console.WriteLine(stateContext.PlayMusic());
+    //stateContext.SetContext(new AMRadio());
 
-    Thread.Sleep(20000);
-    KillSpotify();
-    Thread.Sleep(2000);
+    //Console.WriteLine(stateContext.PlayMusic());
+
+    //Thread.Sleep(20000);
+    //KillSpotify();
+    //Thread.Sleep(2000);
+
+    //stateContext.SetContext(new FMRadio());
+
+    //Console.WriteLine(stateContext.PlayMusic());
+
+    //Thread.Sleep(20000);
+    //KillSpotify();
+    //Thread.Sleep(2000);
+
+    //stateContext.SetContext(new CD());
+
+    //Console.WriteLine(stateContext.PlayMusic());
+
+    //Thread.Sleep(20000);
+    //KillSpotify();
+    //Thread.Sleep(2000);
 
 
 

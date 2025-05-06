@@ -10,7 +10,6 @@
     <Folder Include="Facade\" />
     <Folder Include="Decorator\" />
     <Folder Include="Command\" />
-    <Folder Include="Bridge\" />
     <Folder Include="Iterator\" />
     <Folder Include="Composite\" />
     <Folder Include="Adapter\" />
