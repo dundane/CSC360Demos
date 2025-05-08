@@ -1,20 +1,62 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CSC360DemoDesignPatterns.Bridge;
+using CSC360DemoDesignPatterns.Iterator;
+using CSC360DemoDesignPatterns.Observer;
 using CSC360DemoDesignPatterns.State;
 using System.Diagnostics;
 using System.Management;
+using System.Security.Cryptography.X509Certificates;
 
 
 
 
 internal class Program {
   private static void Main(string[] args) {
+    //Iterator
+
+
+    // Create a collection
+    //var collection = new ConcreteCollection<int>(new[] { 1, 2, 3, 4, 5 });
+
+    //// Create an iterator
+    //var iterator = collection.CreateIterator();
+
+    //// Iterate through the collection
+    //while (iterator.MoveNext()) {
+    //  Console.WriteLine(iterator.Current);
+    //}
+
+
+
+
+
+
+    //Observer
+    IPublisher publisher = new ConcretePublisher();
+    ISubscriber observerOne = new ConcreteObserverOne();
+    ISubscriber observerTwo = new ConcreteObserverTwo();
+
+    publisher.RegisterSubscriber(observerOne);
+    publisher.RegisterSubscriber(observerTwo);
+    String lastText = "";
+    while (lastText.ToUpper() != "EXIT") {
+      Console.WriteLine("Enter new state :");
+      lastText = Console.ReadLine();
+      publisher.Publish(lastText);
+    }
+
+    Console.WriteLine("Unregistering Observer One.");
+    publisher.UnregisterSubscriber(observerOne);
+    Console.WriteLine("Calling Publish With PublishAll so you can see observer one unregistered");
+    publisher.Publish("PublishAll");
+    publisher.UnregisterSubscriber(observerTwo);
+
 
     //Bridge
-    IColor color = new PinkColor();
-    IShape shape = new Arrow(color);
+    //IColor color = new PinkColor();
+    //IShape shape = new Arrow(color);
 
-    shape.Draw();
+    //shape.Draw();
 
 
 

@@ -10,7 +10,6 @@
     <Folder Include="Adapter\" />
     <Folder Include="Decorator\" />
     <Folder Include="Command\" />
-    <Folder Include="Iterator\" />
     <Folder Include="Composite\" />
     <Folder Include="Flyweight\" />
     <Folder Include="Mediator\" />
@@ -19,7 +18,6 @@
     <Folder Include="ChainOfResponsibility\" />
     <Folder Include="TemplateMethod\" />
     <Folder Include="Strategy\" />
-    <Folder Include="Observer\" />
     <Folder Include="Proxy\" />
     <Folder Include="ObjectPool\" />
     <Folder Include="Visitor\" />
