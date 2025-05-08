@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace CSC360DemoDesignPatterns.State {
     public interface IContext {
-        pulbic GetAppropriateContxt
+        public void GetAppropriateContxt() { }
     }
 }

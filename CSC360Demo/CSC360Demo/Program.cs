@@ -11,8 +11,8 @@ internal class Program {
   private static void Main(string[] args) {
 
     //Bridge
-    IColor color = new RedColor();
-    IShape shape = new Square(color);
+    IColor color = new PinkColor();
+    IShape shape = new Arrow(color);
 
     shape.Draw();
 

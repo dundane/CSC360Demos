@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Facade\" />
+    <Folder Include="Adapter\" />
     <Folder Include="Decorator\" />
     <Folder Include="Command\" />
     <Folder Include="Iterator\" />

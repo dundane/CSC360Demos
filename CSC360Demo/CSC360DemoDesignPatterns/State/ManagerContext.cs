@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CSC360DemoDesignPatterns.State {
     public class ManagerContext {
         IContext child;
-        public void ManagerContext(IContext contextChild) { 
+        public  ManagerContext(IContext contextChild) { 
             child = contextChild;
         }
     }

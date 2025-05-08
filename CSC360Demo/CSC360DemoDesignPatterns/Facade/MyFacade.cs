@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSC360DemoDesignPatterns.Adapter {
-    public class LookAtMeIAmAnAdapter {
+namespace CSC360DemoDesignPatterns.Facade {
+    internal class MyFacade {
     }
 }
