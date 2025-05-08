@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CSC360DemoDesignPatterns.Bridge {
-    public class Magenta : IColor {
+    public class MagentaColor : IColor {
         public string ApplyColor() {
             return "Magenta";
         }
