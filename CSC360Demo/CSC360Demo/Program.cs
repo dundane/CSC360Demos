@@ -1,7 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CSC360DemoDesignPatterns.Bridge;
+using CSC360DemoDesignPatterns.Flyweight;
 using CSC360DemoDesignPatterns.Iterator;
 using CSC360DemoDesignPatterns.Observer;
+using CSC360DemoDesignPatterns.Proxy;
 using CSC360DemoDesignPatterns.State;
 using System.Diagnostics;
 using System.Management;
@@ -12,44 +14,88 @@ using System.Security.Cryptography.X509Certificates;
 
 internal class Program {
   private static void Main(string[] args) {
+
+    //Proxy
+
+    IDataSource myDataSource = new ProxySource(new ActualSource());
+
+    for (int requestNumber = 0; requestNumber < 20; requestNumber++) {
+      Console.WriteLine($"Request Number {requestNumber} result {myDataSource.SomeVeryExpensiveDataActivity()}");
+      Thread.Sleep(1000);
+    }
+
+
+    //Flyweight
+
+    //List<CombatUnit> units = new List<CombatUnit>();
+
+    //FlyweightFactory factory = new FlyweightFactory();
+
+    //units.Add(new CombatUnit("Chuck The Sniper", factory.GetFlyweightSoliderType("Sniper")));
+
+    //units.Add(new CombatUnit("Jim The Infantry", factory.GetFlyweightSoliderType("Infantry")));
+
+    //units.Add(new CombatUnit("Bob The The Gunner", factory.GetFlyweightSoliderType("Gunner")));
+
+    //units.Add(new CombatUnit("Richard The The Infantry", factory.GetFlyweightSoliderType("Gunner")));
+
+
+    //foreach (CombatUnit unit in units) {
+    //  Console.WriteLine($"Combat unit named {unit.Name} has an OS : {unit.SoldierTypeCommon.OffensiveStrength} and DS : {unit.SoldierTypeCommon.DefensiveStrength}");
+    //}
+
+    //Console.WriteLine("Upgrading Infantry.");
+    //factory.GetFlyweightSoliderType("Infantry").OffensiveStrength++;
+    //factory.GetFlyweightSoliderType("Infantry").DefensiveStrength++;
+
+    //foreach (CombatUnit unit in units) {
+    //  Console.WriteLine($"Combat unit named {unit.Name} has an OS : {unit.SoldierTypeCommon.OffensiveStrength} and DS : {unit.SoldierTypeCommon.DefensiveStrength}");
+    //}
+
     //Iterator
 
 
-    // Create a collection
-    //var collection = new ConcreteCollection<int>(new[] { 1, 2, 3, 4, 5 });
+    //// Create a collection
+    //ConcreteCollection<int> collection = new ConcreteCollection<int>(new[] { 1, 2, 3, 4, 5 });
 
     //// Create an iterator
-    //var iterator = collection.CreateIterator();
+    //IIterator<int> iterator = collection.CreateIterator();
 
     //// Iterate through the collection
     //while (iterator.MoveNext()) {
     //  Console.WriteLine(iterator.Current);
     //}
 
+    //List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
 
-
-
+    //foreach (int item in list.Where(x => x%2 == 0)) { 
+    //  Console.WriteLine(item);
+    //}
 
 
     //Observer
-    IPublisher publisher = new ConcretePublisher();
-    ISubscriber observerOne = new ConcreteObserverOne();
-    ISubscriber observerTwo = new ConcreteObserverTwo();
+    //IPublisher publisher = new ConcretePublisher();
+    //ISubscriber observerOne = new ConcreteObserverOne();
+    //ISubscriber observerTwo = new ConcreteObserverTwo();
+    //ISubscriber observerThree = new ConcreteObserverThree();
+    //ISubscriber observerTwoTwo = new ConcreteObserverTwo();
 
-    publisher.RegisterSubscriber(observerOne);
-    publisher.RegisterSubscriber(observerTwo);
-    String lastText = "";
-    while (lastText.ToUpper() != "EXIT") {
-      Console.WriteLine("Enter new state :");
-      lastText = Console.ReadLine();
-      publisher.Publish(lastText);
-    }
+    //publisher.RegisterSubscriber(observerOne);
+    //publisher.RegisterSubscriber(observerTwo);
+    //publisher.RegisterSubscriber(observerThree);
+    //publisher.RegisterSubscriber(observerTwoTwo);
+    //String lastText = "";
+    //while (lastText.ToUpper() != "EXIT") {
+    //  Console.WriteLine("Enter new state :");
+    //  lastText = Console.ReadLine();
+    //  publisher.Publish(lastText);
+    //}
 
-    Console.WriteLine("Unregistering Observer One.");
-    publisher.UnregisterSubscriber(observerOne);
-    Console.WriteLine("Calling Publish With PublishAll so you can see observer one unregistered");
-    publisher.Publish("PublishAll");
-    publisher.UnregisterSubscriber(observerTwo);
+    //Console.WriteLine("Unregistering Observer One.");
+    //publisher.UnregisterSubscriber(observerOne);
+    //Console.WriteLine("Calling Publish With PublishAll so you can see observer one unregistered");
+    //publisher.Publish("PublishAll");
+    //publisher.UnregisterSubscriber(observerTwo);
 
 
     //Bridge

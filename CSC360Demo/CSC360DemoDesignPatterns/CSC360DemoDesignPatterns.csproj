@@ -11,17 +11,19 @@
     <Folder Include="Decorator\" />
     <Folder Include="Command\" />
     <Folder Include="Composite\" />
-    <Folder Include="Flyweight\" />
     <Folder Include="Mediator\" />
     <Folder Include="Memento\" />
     <Folder Include="Builder\" />
     <Folder Include="ChainOfResponsibility\" />
     <Folder Include="TemplateMethod\" />
     <Folder Include="Strategy\" />
-    <Folder Include="Proxy\" />
     <Folder Include="ObjectPool\" />
     <Folder Include="Visitor\" />
     <Folder Include="Prototype\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Observer\ConcreteObserverThree.cs" />
   </ItemGroup>
 
   <ItemGroup>
