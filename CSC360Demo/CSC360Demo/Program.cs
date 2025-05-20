@@ -1,7 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CSC360DemoDesignPatterns.Bridge;
+using CSC360DemoDesignPatterns.Command;
+using CSC360DemoDesignPatterns.Decorator;
 using CSC360DemoDesignPatterns.Flyweight;
 using CSC360DemoDesignPatterns.Iterator;
+using CSC360DemoDesignPatterns.Mediator;
 using CSC360DemoDesignPatterns.Observer;
 using CSC360DemoDesignPatterns.Proxy;
 using CSC360DemoDesignPatterns.State;
@@ -15,14 +18,74 @@ using System.Security.Cryptography.X509Certificates;
 internal class Program {
   private static void Main(string[] args) {
 
+
+    //Command Pattern
+
+    ICharacter character = new CharacterReceiver();
+    ICommandInterface jumpCommand = new JumpCommand(character);
+    ICommandInterface attackCommand = new AttackCommand(character);
+    ICommandInterface crouchCommand = new CrouchCommand(character);
+    ICommandInterface dashCommand = new DashCommand(character);
+
+    XboxControllerInvoker xboxController = new XboxControllerInvoker();
+
+    xboxController.SetCommand("A", jumpCommand);
+    xboxController.SetCommand("B", attackCommand);
+    xboxController.SetCommand("X", dashCommand);
+    xboxController.SetCommand("Y", crouchCommand);
+
+    Console.WriteLine("Press A, B, X, or Y (or Q to quit):");
+
+    while (true) {
+      String pressedKey = Console.ReadKey(true).Key.ToString().ToUpper();
+
+      if (pressedKey == "Q") {
+        break;
+      }
+
+      xboxController.PressButton(pressedKey);
+    }
+
+
+
+
+
+
+    //Mediator
+
+
+
+    //IChatMediator mediator = new ConcreteMediator() as IChatMediator;
+
+    //IColleague alice = new ConcreteColleague(mediator, "Alice") as IColleague;
+    //IColleague bob = new ConcreteColleague(mediator, "Bob") as IColleague;
+    //IColleague charlie = new ConcreteColleague(mediator, "Charlie") as IColleague;
+
+    //alice.Send("Hello, team!");
+    //bob.Send("Hi Alice!");
+
+
+    //Decorator
+    //PlainText initalText = new PlainText();
+    //Console.WriteLine(initalText.Render());
+
+    //BoldDecorator boldText = new BoldDecorator(initalText);
+
+    //Console.WriteLine(boldText.Render());
+
+    //ItalicDecorator italicText = new ItalicDecorator(boldText);
+
+    //Console.WriteLine(italicText.Render());
+
+
     //Proxy
 
-    IDataSource myDataSource = new ProxySource(new ActualSource());
+    //IDataSource myDataSource = new ProxySource(new ActualSource());
 
-    for (int requestNumber = 0; requestNumber < 20; requestNumber++) {
-      Console.WriteLine($"Request Number {requestNumber} result {myDataSource.SomeVeryExpensiveDataActivity()}");
-      Thread.Sleep(1000);
-    }
+    //for (int requestNumber = 0; requestNumber < 20; requestNumber++) {
+    //  Console.WriteLine($"Request Number {requestNumber} result {myDataSource.SomeVeryExpensiveDataActivity()}");
+    //  Thread.Sleep(1000);
+    //}
 
 
     //Flyweight
