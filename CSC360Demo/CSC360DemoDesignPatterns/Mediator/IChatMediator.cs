@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace CSC360DemoDesignPatterns.Mediator;
 public interface IChatMediator {
   void SendMessage(string message, IColleague user);
-  void AddUser(IColleague user);
+  void Register(IColleague user);
 
 }

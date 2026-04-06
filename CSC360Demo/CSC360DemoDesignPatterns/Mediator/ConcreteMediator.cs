@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CSC360DemoDesignPatterns.Mediator;
-public class ConcreteMediator {
+public class ConcreteMediator : IChatMediator {
 
   private readonly List<IColleague> colleagues;
 
@@ -13,7 +13,7 @@ public class ConcreteMediator {
     colleagues = new List<IColleague>();
   }
 
-  public void Register(IColleague colleague) {
+    public void Register(IColleague colleague) {
     if (!colleagues.Contains(colleague)) {
       colleagues.Add(colleague);
     }
@@ -27,4 +27,7 @@ public class ConcreteMediator {
     }
   }
 
+    public void SendMessage(string message, IColleague user) {
+        Console.WriteLine($"{user.GetType().Name} sends message: {message}");
+    }
 }

@@ -11,7 +11,7 @@ public class ConcreteObserverOne : ISubscriber {
     id = Guid.NewGuid();
   }
   public void UpdateState(String newState) {
-    if (newState != "StateTwo") {
+    if (newState != "StateOne") {
       Console.WriteLine($"Observer One ID {id.ToString()} accepted state {newState}");
     } else {
       Console.WriteLine($"Observer One ID {id.ToString()} ignored state {newState}");

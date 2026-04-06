@@ -17,6 +17,8 @@ namespace CSC360DemoDesignPatterns.Factory {
                     return new Bird();
                 case "TURTLE":
                     return new Turtle();
+                case "PARROT":
+                    return new Parrot();
                 default:
                     throw new ArgumentException("Unkinow Animal Type");
             }

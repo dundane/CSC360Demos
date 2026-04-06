@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSC360DemoDesignPatterns.Facade {
-    internal class MyFacade {
+namespace CSC360DemoDesignPatterns.Adapter {
+    public interface IRoundPeg {
+        public double GetRadius();
     }
 }

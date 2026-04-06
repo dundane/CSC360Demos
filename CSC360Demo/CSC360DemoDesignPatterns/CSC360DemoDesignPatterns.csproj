@@ -7,13 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Adapter\" />
-    <Folder Include="Composite\" />
     <Folder Include="Memento\" />
     <Folder Include="Builder\" />
     <Folder Include="ChainOfResponsibility\" />
     <Folder Include="TemplateMethod\" />
-    <Folder Include="Strategy\" />
     <Folder Include="ObjectPool\" />
     <Folder Include="Visitor\" />
     <Folder Include="Prototype\" />
@@ -24,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Management" Version="9.0.4" />
     <PackageReference Include="Unity" Version="5.11.10" />
   </ItemGroup>
 
