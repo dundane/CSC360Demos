@@ -2,22 +2,10 @@
 
 namespace CSC360DemoDesignPatterns.AbstractFactory {
     public class WildAnimalFactory : IAnimalFactory {
-        public IAnimal CreateAnimal(string animalType) {
-            switch (animalType.ToUpper()) {
-                case "DOG":
-                    return new WildDog();
-                case "CAT":
-                    return new WildCat();
-                case "BIRD":
-                    return new WildBird();
-                case "TURTLE":
-                    return new WildTurtle();
-                case "PARROT":
-                    return new WildParrot();
-                default:
-                    throw new ArgumentException("Unkinow Animal Type");
+        private readonly AnimalFactoryTypeCatalog catalog = new(typeof(WildAnimalFactory), "Wild");
 
-            }
-        }
+        public IReadOnlyList<string> AnimalTypes => catalog.Names;
+
+        public IAnimal CreateAnimal(string animalType) => catalog.Create(animalType);
     }
 }

@@ -28,6 +28,7 @@ public class ConcreteMediator : IChatMediator {
   }
 
     public void SendMessage(string message, IColleague user) {
-        Console.WriteLine($"{user.GetType().Name} sends message: {message}");
+        Console.WriteLine($"{user.Name} sends message: {message}");
+        RelayMessage(message, user);
     }
 }

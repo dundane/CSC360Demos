@@ -19,4 +19,8 @@ public class CharacterReceiver : ICharacter {
   public void Crouch() {
     Console.WriteLine("Crouch");
   }
+
+    public void Eat() {
+        Console.WriteLine("Eat");
+    }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CSC360DemoDesignPatterns.State;
 public class Player45 : IBoomBoxSource {
   public string PlayMuisc() {
-    string url = @"https://open.spotify.com/track/6hGMlZMkzZ2pvKB0P9UDaf?si=e1f2f2182a5d404a";
+    string url = @"https://open.spotify.com/track/07q0QVgO56EorrSGHC48y3?si=65f1afacf48a40b4";
 
     Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
 

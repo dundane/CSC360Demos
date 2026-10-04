@@ -10,4 +10,6 @@ public interface ICharacter {
   public void Attack();
   public void Dash();
   public void Crouch();
+
+    public void Eat();
 }

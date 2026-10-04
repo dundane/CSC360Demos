@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace CSC360DemoDesignPatterns.Singleton {
     public class SingletonOne {
-        private static SingletonOne instance;
+        private static readonly Lazy<SingletonOne> instance = new Lazy<SingletonOne>(() => new SingletonOne());
 
         private SingletonOne() {
             InstanceGuid = Guid.NewGuid().ToString();
         }
         public static SingletonOne GetInstance() {
-            if (instance == null)
-            {
-                instance = new SingletonOne();
-            }
-            return instance;
+            return instance.Value;
         }
 
         public String InstanceGuid { get; private set; }

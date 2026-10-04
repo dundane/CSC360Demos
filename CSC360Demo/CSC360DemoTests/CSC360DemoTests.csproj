@@ -44,6 +44,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CSC360DemoDesignPatterns\CSC360DemoDesignPatterns.csproj" />
+    <ProjectReference Include="..\CSC360Demo\CSC360Demo.csproj" />
   </ItemGroup>
 
 </Project>

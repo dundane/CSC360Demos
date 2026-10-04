@@ -2,14 +2,14 @@
 
 namespace CSC360DemoDesignPatterns.Proxy;
 public class ProxySource : IDataSource {
-  private IDataSource source;
-  private string cache = "";
+  private readonly IDataSource source;
+  private string? cache;
   public ProxySource(IDataSource sourceToProxy) {
-    source = sourceToProxy;
+    source = sourceToProxy ?? throw new ArgumentNullException(nameof(sourceToProxy));
   }
 
   public string SomeVeryExpensiveDataActivity() {
-    if (cache == String.Empty || source.Dirty()) {
+    if (cache is null || source.Dirty()) {
       cache = source.SomeVeryExpensiveDataActivity();
       Console.WriteLine("Actually Fetching");
     } else {

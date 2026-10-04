@@ -14,7 +14,7 @@ public class ConcreteColleague : IColleague {
     this.mediator = mediator;
     this.name = name;
   }
-
+  public string Name => name;
   public void Receive(string message) {
     Console.WriteLine($"{name} : {message}");
   }

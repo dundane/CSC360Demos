@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CSC360DemoDesignPatterns.Factory {
-    public class Bird : IAnimal {
+    public class Parrot : IAnimal {
         string IAnimal.Speak() {
-            return "Tweet!";
+            return "I want a cracker.";
         }
     }
 }
